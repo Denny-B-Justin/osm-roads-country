@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "locale": "en_US.UTF-8",
+  "metadata": {
+    "appmode": "python-dash",
+    "entrypoint": "app"
+  },
+  "python": {
+    "version": "3.9.13",
+    "package_manager": {
+      "name": "pip",
+      "version": "22.0.4",
+      "package_file": "requirements.txt"
+    }
+  },
+  "environment": {
+    "python": {
+      "requires": "~=3.9.0"
+    }
+  },
+  "files": {
+    "requirements.txt": {
+      "checksum": "57012f99879845f4c548ae23f5348e91"
+    },
+    ".env.example": {
+      "checksum": "d34c62e8b5c07f0e6f7ed10d05a42fe4"
+    },
+    ".gitignore": {
+      "checksum": "fe80dd87e2f729a3be814d5554379a81"
+    },
+    ".python-version": {
+      "checksum": "b640db312b285da84cc1cd5a082d04c3"
+    },
+    "LICENSE": {
+      "checksum": "b2e3d3c52a4eb5143fdf5f552583b44c"
+    },
+    "README.md": {
+      "checksum": "b728e4e76e9e27b69ffb2642d97b00e8"
+    },
+    "app.py": {
+      "checksum": "3d60d2bfaae62fdc12df50ff0813b686"
+    },
+    "assets/The-World-Bank-group-white.png": {
+      "checksum": "596f6d13fdd22a2760464b4cc449ff24"
+    },
+    "assets/favicon.ico": {
+      "checksum": "7004207d43ad14e9bc89b484f1257f50"
+    },
+    "assets/favicon.svg": {
+      "checksum": "db80422863145694b44fad4d8a2a95e6"
+    },
+    "assets/fonts/FiraSans-OFL-LICENSE.txt": {
+      "checksum": "4538a5afdd18ccebd224405ffe3dee4b"
+    },
+    "assets/fonts/fira-sans-latin-300-normal.woff2": {
+      "checksum": "aeb66f4f2c7c6a47d3a4d92009525dc9"
+    },
+    "assets/fonts/fira-sans-latin-400-italic.woff2": {
+      "checksum": "022ce95a9787824d3ea819e104e5e3cc"
+    },
+    "assets/fonts/fira-sans-latin-400-normal.woff2": {
+      "checksum": "d26e1b11589f2c2744eadc0ac2ffae94"
+    },
+    "assets/fonts/fira-sans-latin-500-normal.woff2": {
+      "checksum": "9410bb8f89e52fc8df5f0aca7009947c"
+    },
+    "assets/fonts/fira-sans-latin-600-normal.woff2": {
+      "checksum": "beb3d7395726910999a3b89eb76e9a4b"
+    },
+    "assets/fonts/fira-sans-latin-700-normal.woff2": {
+      "checksum": "43eb5ca3942e0f74137d8754629fb9e6"
+    },
+    "assets/road_network.svg": {
+      "checksum": "5c3d2ce92cd0d48281f0d9aad6211abe"
+    },
+    "assets/roads.js": {
+      "checksum": "d42ccc6d856f46f5a365c81c8800714f"
+    },
+    "assets/style.css": {
+      "checksum": "513366d91a62818b161aeb6550cd2847"
+    },
+    "countries.py": {
+      "checksum": "fc22a934c1fecb020e879712526199f0"
+    },
+    "pages.py": {
+      "checksum": "416a849e76c2874d9384f9fc3564c3f8"
+    },
+    "roads_data.py": {
+      "checksum": "7276b7ce39ff281dbd29ebe8f5a35f93"
+    }
+  }
+}
