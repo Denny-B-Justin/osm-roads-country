@@ -52,6 +52,7 @@ app = Dash(
 server = app.server
 
 LOGO_URL = app.get_asset_url("The-World-Bank-group-white.png")
+PIM_PAM_LOGO_URL = app.get_asset_url("PIM-PAM-Logo.png")
 FAVICON_ICO = app.get_asset_url("favicon.ico")
 FAVICON_SVG = app.get_asset_url("favicon.svg")
 
@@ -106,10 +107,10 @@ def render_page(search):
     page = _page_key(search)
     catalog = rd.get_catalog()
     if page == "":
-        return pages.home_layout(catalog, LOGO_URL, DOWNLOAD_BASE)
+        return pages.home_layout(catalog, LOGO_URL, PIM_PAM_LOGO_URL, DOWNLOAD_BASE)
     if page == pages.DOCS_PAGE:
-        return pages.docs_layout(catalog, LOGO_URL)
-    return pages.not_found_layout(LOGO_URL)
+        return pages.docs_layout(catalog, LOGO_URL, PIM_PAM_LOGO_URL)
+    return pages.not_found_layout(LOGO_URL, PIM_PAM_LOGO_URL)
 
 
 app.clientside_callback(

@@ -119,6 +119,7 @@ button { font-family: inherit; font-size: inherit; }
   display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .header-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
 .header-logo { height: 34px; width: auto; display: block; }
+.header-divider { width: 1px; height: 28px; background: rgba(255,255,255,.28); display: block; }
 .header-name { padding-left: 14px; border-left: 1px solid rgba(255,255,255,.28);
   font-weight: 500; font-size: 16px; letter-spacing: .005em; color: #fff; }
 .header-nav { display: flex; align-items: center; gap: 4px; }

@@ -107,7 +107,7 @@ def ext_link(label, href, cls=None):
     return html.A(label, href=href, target="_blank", rel="noopener noreferrer", className=cls)
 
 
-def build_header(current, logo_src):
+def build_header(current, logo_src, pim_pam_logo_src):
     """current: 'home' or 'docs'."""
     if current == "docs":
         nav = [
@@ -121,7 +121,9 @@ def build_header(current, logo_src):
     return html.Header(className="app-header", children=html.Div(className="app-header-inner", children=[
         dcc.Link([
             html.Img(src=logo_src, className="header-logo", alt="World Bank Group"),
-            html.Span(SHORT_NAME, className="header-name"),
+            html.Span(className="header-divider", **{"aria-hidden": "true"}),
+            html.Img(src=pim_pam_logo_src, className="header-logo", alt="PIM-PAM"),
+            # html.Span(" ", className="header-name"),
         ], href=HOME_HREF, className="header-brand"),
         html.Nav(nav, className="header-nav", **{"aria-label": "Main"}),
     ]))
@@ -164,7 +166,7 @@ def _download_meta(catalog):
     }
 
 
-def home_layout(catalog, logo_src, download_base):
+def home_layout(catalog, logo_src, pim_pam_logo_src, download_base):
     available = len(catalog.countries)
     options = [{"label": c.name, "value": c.iso2, "search": f"{c.name} {c.iso2}"}
                for c in catalog.countries]
@@ -191,7 +193,7 @@ def home_layout(catalog, logo_src, download_base):
         facts += f" Data last updated {updated}."
 
     return html.Div(className="page page-home", children=[
-        build_header("home", logo_src),
+        build_header("home", logo_src, pim_pam_logo_src),
         html.Main(className="hero", children=[
             html.Div(className="hero-roads", **{"aria-hidden": "true"}),
             html.Div(className="hero-inner", children=[
@@ -475,9 +477,9 @@ def _summary(catalog):
     ])
 
 
-def docs_layout(catalog, logo_src):
+def docs_layout(catalog, logo_src, pim_pam_logo_src):
     return html.Div(className="page page-docs", children=[
-        build_header("docs", logo_src),
+        build_header("docs", logo_src, pim_pam_logo_src),
         html.Div(className="docs-hero", children=[
             html.Div(className="docs-hero-roads", **{"aria-hidden": "true"}),
             html.Div(className="docs-hero-inner", children=[
@@ -485,8 +487,9 @@ def docs_layout(catalog, logo_src):
                 html.P("What the downloads contain, where the data come from and how to use them.",
                        className="docs-lede"),
                 html.P(className="docs-authors", children=[
-                    "Developed by ", html.Span(AUTHORS[0]), ", ", html.Span(AUTHORS[1]), " and ",
-                    html.Span(AUTHORS[2]),
+                    "Developed by ", html.Span(AUTHORS[0]), 
+                    " and ", html.Span(AUTHORS[1]), 
+                    # " and ", html.Span(AUTHORS[2]),
                 ]),
             ]),
         ]),
@@ -510,9 +513,9 @@ def docs_layout(catalog, logo_src):
     ])
 
 
-def not_found_layout(logo_src):
+def not_found_layout(logo_src, pim_pam_logo_src):
     return html.Div(className="page page-docs", children=[
-        build_header("missing", logo_src),
+        build_header("missing", logo_src, pim_pam_logo_src),
         html.Main(className="not-found", children=[
             html.H1("This page does not exist"),
             html.P("The link may be mistyped or out of date."),
