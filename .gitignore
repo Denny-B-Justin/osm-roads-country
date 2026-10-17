@@ -1,1 +1,6 @@
 .env
+__pycache__/
+.venv/
+venv/
+dev/mock_volume/
+.pytest_cache/
