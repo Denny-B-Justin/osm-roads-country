@@ -21,6 +21,7 @@ SHORT_NAME = "OSM Roads by Country"
 DOCS_PAGE = "roads-data-documentation"
 HOME_HREF = "?"                                  # relative on purpose: works under any URL prefix
 DOCS_HREF = f"?page={DOCS_PAGE}"
+PIM_PAM_URL = "https://datanalytics.worldbank.org/wkpgf-pimpam-digital-tools/"
 META_DESCRIPTION = ("Download the OpenStreetMap road network of a country as CSV files, "
                     "split into parts of up to 200,000 rows.")
 AUTHORS = ["Denny B. Justin", "Kaushiki Singh", "Kai-Alexander Kaiser"]
@@ -109,22 +110,31 @@ def ext_link(label, href, cls=None):
 
 def build_header(current, logo_src, pim_pam_logo_src):
     """current: 'home' or 'docs'."""
+    pim_pam_nav_link = html.A(["PIM-PAM", icon("external")], href=PIM_PAM_URL, target="_blank",
+                              rel="noopener noreferrer", className="nav-link",
+                              title="Opens PIM-PAM in a new tab")
     if current == "docs":
         nav = [
             dcc.Link("Download data", href=HOME_HREF, className="nav-link"),
             html.Span("Documentation", className="nav-link is-current", **{"aria-current": "page"}),
+            pim_pam_nav_link,
         ]
     else:
-        nav = [html.A(["Documentation", icon("external")], href=DOCS_HREF, target="_blank",
-                      rel="noopener", className="nav-link",
-                      title="Opens the documentation in a new tab")]
+        nav = [
+            html.A(["Documentation", icon("external")], href=DOCS_HREF, target="_blank",
+                  rel="noopener", className="nav-link",
+                  title="Opens the documentation in a new tab"),
+            pim_pam_nav_link,
+        ]
     return html.Header(className="app-header", children=html.Div(className="app-header-inner", children=[
-        dcc.Link([
-            html.Img(src=logo_src, className="header-logo", alt="World Bank Group"),
+        html.Div(className="header-brand", children=[
+            dcc.Link(html.Img(src=logo_src, className="header-logo", alt="World Bank Group"),
+                     href=HOME_HREF, className="header-brand-link"),
             html.Span(className="header-divider", **{"aria-hidden": "true"}),
-            html.Img(src=pim_pam_logo_src, className="header-logo", alt="PIM-PAM"),
-            # html.Span(" ", className="header-name"),
-        ], href=HOME_HREF, className="header-brand"),
+            html.A(html.Img(src=pim_pam_logo_src, className="header-logo", alt="PIM-PAM"),
+                   href=PIM_PAM_URL, target="_blank", rel="noopener noreferrer",
+                   className="header-brand-link", title="Opens PIM-PAM in a new tab"),
+        ]),
         html.Nav(nav, className="header-nav", **{"aria-label": "Main"}),
     ]))
 

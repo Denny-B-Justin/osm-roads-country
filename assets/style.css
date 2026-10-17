@@ -117,7 +117,8 @@ button { font-family: inherit; font-size: inherit; }
   border-bottom: 1px solid var(--navy-line); }
 .app-header-inner { max-width: 1200px; height: 100%; margin: 0 auto; padding: 0 24px;
   display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.header-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.header-brand { display: flex; align-items: center; gap: 14px; }
+.header-brand-link { display: flex; align-items: center; text-decoration: none; }
 .header-logo { height: 34px; width: auto; display: block; }
 .header-divider { width: 1px; height: 28px; background: rgba(255,255,255,.28); display: block; }
 .header-name { padding-left: 14px; border-left: 1px solid rgba(255,255,255,.28);
