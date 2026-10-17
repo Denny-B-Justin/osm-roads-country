@@ -428,7 +428,7 @@ def _achievements(catalog):
     if catalog.loaded and catalog.countries:
         updated = format_date(catalog.updated_at)
         facts = [
-            ("Countries and territories", f"{len(catalog.countries):,} of {tracked:,}"),
+            ("Countries and territories", f"{len(catalog.countries):,}"), #of {tracked:,}"),
             ("Road segments", f"{catalog.total_rows:,}"),
             ("Download size, all countries", rd.human_size(catalog.total_bytes)),
         ]
@@ -445,15 +445,16 @@ def _achievements(catalog):
                "with the full line shape, ready to open without converting from OpenStreetMap's own "
                "formats."),
     ]
-    if pending:
-        children.append(html.Div(className="doc-pending", children=[
-            html.H3("Not available yet"),
-            html.P("We are working on these countries and territories:"),
-            html.Ul(className="pending-list", children=[html.Li(cc.country_name(c)) for c in pending]),
-        ]))
-    elif not catalog.loaded:
-        children.append(html.P("The current list of countries could not be loaded. Refresh the page in a "
-                               "minute.", className="doc-callout"))
+    # To add Pending Country List
+    # if pending:
+    #     children.append(html.Div(className="doc-pending", children=[
+    #         html.H3("Not available yet"),
+    #         html.P("We are working on these countries and territories:"),
+    #         html.Ul(className="pending-list", children=[html.Li(cc.country_name(c)) for c in pending]),
+    #     ]))
+    # elif not catalog.loaded:
+    #     children.append(html.P("The current list of countries could not be loaded. Refresh the page in a "
+    #                            "minute.", className="doc-callout"))
     return _section("achievements", "Achievements", children)
 
 
