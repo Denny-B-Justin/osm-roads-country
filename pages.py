@@ -24,7 +24,7 @@ DOCS_HREF = f"?page={DOCS_PAGE}"
 PIM_PAM_URL = "https://datanalytics.worldbank.org/wkpgf-pimpam-digital-tools/"
 META_DESCRIPTION = ("Download the OpenStreetMap road network of a country as CSV files, "
                     "split into parts of up to 200,000 rows.")
-AUTHORS = ["Denny B. Justin", "Kaushiki Singh", "Kai-Alexander Kaiser"]
+AUTHORS = ["Kaushiki Singh", "Denny B. Justin", "Kai-Alexander Kaiser"]
 
 OSM_COPYRIGHT_URL = "https://www.openstreetmap.org/copyright"
 OSM_URL = "https://www.openstreetmap.org"
